@@ -72,7 +72,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.10.1</version><!--$NO-MVN-MAN-VER$-->
 				<configuration>
 					<fork>true</fork>
 					<executable>C:\Program Files\Java\jdk1.8.0_202\bin\javac.exe</executable>
