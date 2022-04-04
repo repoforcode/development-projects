@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Taking root access
-      run: sudo -i 
+      run: sudo -i
     - name: Shutting down tomcat
       run: cd /opt/tomcat/bin && ./shutdown.sh
     - name: Delete already created artifacts
