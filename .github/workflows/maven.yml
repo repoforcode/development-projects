@@ -23,3 +23,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Taking root access
+      run: sudo -i 
+    - name: Shutting down tomcat
+      run: cd /opt/tomcat/bin && ./shutdown.sh
+    - name: Delete already created artifacts
+      run: rm /opt/tomcat/webapps/InternalDbApplication-1.0.war && rm -r /opt/tomcat/webapps/InternalDbApplication-1.0
+    - name: Copy new created artifacts
+      run: cp /home/ec2-user/actions-runner/_work/development-projects/development-projects/target/InternalDbApplication-1.0.war /opt/tomcat/webapps/InternalDbApplication-1.0.war 
+    - name: Start tomcat server
+      run: cd /opt/tomcat/bin && ./startup.sh
