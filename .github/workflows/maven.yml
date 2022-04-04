@@ -27,6 +27,8 @@ jobs:
       run: sudo -i
     - name: Shutting down tomcat
       run: cd /opt/tomcat/bin && ./shutdown.sh
+    - name: Shutting down tomcat
+      run: ./shutdown.sh
     - name: Delete already created artifacts
       run: rm /opt/tomcat/webapps/InternalDbApplication-1.0.war && rm -r /opt/tomcat/webapps/InternalDbApplication-1.0
     - name: Copy new created artifacts
