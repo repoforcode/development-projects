@@ -23,6 +23,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Start tomcat server
+      run: cd /opt/tomcat/bin && ./shutdown.sh
     - name: Delete already created artifacts
       run:  rm /opt/tomcat/webapps/InternalDbApplication-1.0.war && rm -r /opt/tomcat/webapps/InternalDbApplication-1.0
     - name: Copy new created artifacts
