@@ -29,5 +29,3 @@ jobs:
       run: cp /home/ec2-user/actions-runner/_work/development-projects/development-projects/target/InternalDbApplication-1.0.war /opt/tomcat/webapps/InternalDbApplication-1.0.war 
     - name: Start tomcat server
       run: cd /opt/tomcat/bin && ./startup.sh
-    - name: Validating application
-      run: ping http://ec2-34-224-215-246.compute-1.amazonaws.com:8080/InternalDbApplication-1.0
