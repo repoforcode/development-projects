@@ -26,7 +26,7 @@ jobs:
     - name: Taking root access
       run: sudo -i
     - name: Delete already created artifacts
-      run: rm /opt/tomcat/webapps/InternalDbApplication-1.0.war && rm -r /opt/tomcat/webapps/InternalDbApplication-1.0
+      run: sudo -i && rm /opt/tomcat/webapps/InternalDbApplication-1.0.war && rm -r /opt/tomcat/webapps/InternalDbApplication-1.0
     - name: Copy new created artifacts
       run: cp /home/ec2-user/actions-runner/_work/development-projects/development-projects/target/InternalDbApplication-1.0.war /opt/tomcat/webapps/InternalDbApplication-1.0.war 
     - name: Start tomcat server
